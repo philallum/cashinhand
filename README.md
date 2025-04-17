@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Local Help Hub
 
 A platform connecting people with skills to those who need help, built with Supabase and [Your Frontend Framework].
@@ -62,3 +63,7 @@ The application uses the following main tables:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+=======
+# cashinhand
+Local skills for cash app
+>>>>>>> fb6b225a2bf6e73612f04aafa485c8ed9d3b6a1f
