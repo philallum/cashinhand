@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Help Hub - Find Local Services</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <script src="/node_modules/htmx.org/dist/htmx.min.js"></script>
+    <script defer src="/node_modules/alpinejs/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-primary-600">Local Help Hub</a>
+                <div class="space-x-4">
+                    <a href="/src/pages/search.html" class="btn-secondary">Find Help</a>
+                    <a href="/src/pages/offer-help.html" class="btn-primary">Offer Help</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Find Local Help for Any Task</h1>
+            <p class="text-xl text-gray-600 mb-8">Connect with skilled people in your community for help with tasks, projects, and more.</p>
+            
+            <div class="max-w-2xl mx-auto">
+                <form class="flex gap-4" hx-get="/src/pages/search-results.html" hx-trigger="submit" hx-target="#search-results">
+                    <input type="text" name="query" placeholder="What do you need help with?" class="input flex-1">
+                    <button type="submit" class="btn-primary whitespace-nowrap">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Search results will be loaded here by HTMX -->
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About Local Help Hub</h3>
+                    <p class="text-gray-300">Connecting local communities through skill sharing and mutual help.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="/how-it-works" class="text-gray-300 hover:text-white">How It Works</a></li>
+                        <li><a href="/safety" class="text-gray-300 hover:text-white">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/contact" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="/support" class="text-gray-300 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html> 
